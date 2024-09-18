@@ -45,15 +45,10 @@ void write_file(const float *const buffer, const char *const name, const size_t 
     exit(1);
   }
 
-  for (size_t index = 0; index < quantity; index++)
+  if (fwrite(buffer, sizeof(float), quantity, file) != quantity)
   {
-    const float rounded = (int)(buffer[index] * 1000000.0f) / 1000000.0f;
-
-    if (fwrite(&rounded, sizeof(float), 1, file) != 1)
-    {
-      fprintf(stderr, "Failed to write file \"%s\".\n", name);
-      exit(1);
-    }
+    fprintf(stderr, "Failed to write file \"%s\".\n", name);
+    exit(1);
   }
 
   if (fclose(file) != 0)
