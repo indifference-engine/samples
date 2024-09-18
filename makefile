@@ -46,11 +46,11 @@ tests/cases/%.hex: tests/cases/%.raw
 	xxd $< > $@
 
 tests/pass_markers/%: \
-		tests/cases/%/outputs/expected/output_samples/opacities.hex \
-		tests/cases/%/outputs/expected/output_samples/reds.hex \
+		tests/cases/%/outputs/expected/output_samples/left.hex \
+		tests/cases/%/outputs/expected/output_samples/right.hex \
 		tests/cases/%/outputs/expected/sound_effect.hex \
-		tests/cases/%/outputs/actual/output_samples/opacities.hex \
-		tests/cases/%/outputs/actual/output_samples/reds.hex \
+		tests/cases/%/outputs/actual/output_samples/left.hex \
+		tests/cases/%/outputs/actual/output_samples/right.hex \
 		tests/cases/%/outputs/actual/sound_effect.hex
 	diff tests/cases/$*/outputs/expected/output_samples/left.hex tests/cases/$*/outputs/actual/output_samples/left.hex
 	diff tests/cases/$*/outputs/expected/output_samples/right.hex tests/cases/$*/outputs/actual/output_samples/right.hex
