@@ -1,6 +1,6 @@
-#ifndef SAMPLE_FULLY_LOOPING_H
+#ifndef SAMPLE_PARTIALLY_LOOPING_H
 
-#define SAMPLE_FULLY_LOOPING_H
+#define SAMPLE_PARTIALLY_LOOPING_H
 
 /**
  * Samples a sound effect which loops its ending segment.  Nearest neighbor
@@ -49,7 +49,7 @@
  *                             Behavior is undefined if any are NaN, infinity or
  *                             negative infinity.
  */
-void sample_fully_looping(
+void sample_partially_looping(
     const int sound_effect_length,
     const int sound_effect_loop_from,
     const float *const sound_effect_samples,
